@@ -19,7 +19,7 @@ object Dependencies {
             const val ui = "androidx.compose.ui:ui:${Versions.compose}"
             const val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
             const val uiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
-            const val material = "androidx.compose.material:material:${Versions.compose}"
+            const val material3 = "androidx.compose.material3:material3:1.0.0-alpha05"
         }
         object Lifecycle {
             const val runtimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"

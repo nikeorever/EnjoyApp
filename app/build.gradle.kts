@@ -35,6 +35,8 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+
+        freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
     }
     buildFeatures {
         compose = true
@@ -55,7 +57,7 @@ dependencies {
     implementation(Dependencies.Androidx.Compose.ui)
     implementation(Dependencies.Androidx.Compose.uiToolingPreview)
     implementation(Dependencies.Androidx.Compose.uiTooling)
-    implementation(Dependencies.Androidx.Compose.material)
+    implementation(Dependencies.Androidx.Compose.material3)
     implementation(Dependencies.Androidx.Lifecycle.runtimeKtx)
     implementation(Dependencies.Androidx.Activity.compose)
     implementation(Dependencies.Androidx.startup)
