@@ -5,9 +5,16 @@ object Versions {
     const val kotlin = "1.6.10"
     const val android = "7.1.1"
     const val compose = "1.1.0"
+    const val accompanist = "0.23.1"
 }
 
 object Dependencies {
+
+    object Google {
+        object Accompanist {
+            const val pager = "com.google.accompanist:accompanist-pager:${Versions.accompanist}"
+        }
+    }
 
     object Androidx {
         const val startup = "androidx.startup:startup-runtime:1.1.1"

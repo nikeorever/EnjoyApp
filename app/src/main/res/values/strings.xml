@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Enjoy App</string>
+    <string name="android">Android</string>
+    <string name="flutter">Flutter</string>
 </resources>

@@ -61,6 +61,7 @@ dependencies {
     implementation(Dependencies.Androidx.Lifecycle.runtimeKtx)
     implementation(Dependencies.Androidx.Activity.compose)
     implementation(Dependencies.Androidx.startup)
+    implementation(Dependencies.Google.Accompanist.pager)
 
     debugImplementation("com.lenox.enjoy.flutter_module:flutter_debug:1.0")
     "profileImplementation"("com.lenox.enjoy.flutter_module:flutter_profile:1.0")
