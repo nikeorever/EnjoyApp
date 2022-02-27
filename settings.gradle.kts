@@ -43,7 +43,7 @@ enableFeaturePreview("VERSION_CATALOGS")
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
-            version("plugin-android", "7.1.1")
+            version("plugin-android", "7.1.2")
             version("plugin-kotlin", "1.6.10")
             version("accompanist", "0.23.1")
             version("androidx-compose", "1.1.0")
