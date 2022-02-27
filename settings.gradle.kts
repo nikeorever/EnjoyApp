@@ -53,6 +53,8 @@ dependencyResolutionManagement {
             plugin("android-lib", "com.android.library").versionRef("plugin-android")
             plugin("kotlin.android", "org.jetbrains.kotlin.android").versionRef("plugin-kotlin")
 
+            library("desugar-jdk-libs", "com.android.tools", "desugar_jdk_libs").version("1.1.5")
+
             library("accompanist-pager", "com.google.accompanist", "accompanist-pager").versionRef("accompanist")
             library("accompanist-swiperefresh", "com.google.accompanist", "accompanist-swiperefresh").versionRef("accompanist")
             bundle("accompanist", listOf("accompanist-pager", "accompanist-swiperefresh"))
