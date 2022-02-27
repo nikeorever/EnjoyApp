@@ -1,15 +1,17 @@
+@file:Suppress("UnstableApiUsage", "DSL_SCOPE_VIOLATION")
+
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.app)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
-    compileSdk = Versions.compileSdk
+    compileSdk = property("android.compileSdk").toString().toInt()
 
     defaultConfig {
         applicationId = "com.lenox.enjoy"
-        minSdk = Versions.minSdk
-        targetSdk = Versions.targetSdk
+        minSdk = property("android.minSdk").toString().toInt()
+        targetSdk = property("android.targetSdk").toString().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -42,7 +44,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.get()
     }
     packagingOptions {
         resources {
@@ -52,25 +54,30 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Androidx.Core.ktx)
-    implementation(Dependencies.Androidx.Core.splashscreen)
-    implementation(Dependencies.Androidx.Compose.ui)
-    implementation(Dependencies.Androidx.Compose.uiToolingPreview)
-    implementation(Dependencies.Androidx.Compose.uiTooling)
-    implementation(Dependencies.Androidx.Compose.material3)
-    implementation(Dependencies.Androidx.Lifecycle.runtimeKtx)
-    implementation(Dependencies.Androidx.Activity.compose)
-    implementation(Dependencies.Androidx.startup)
-    implementation(Dependencies.Google.Accompanist.pager)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    debugImplementation("com.lenox.enjoy.flutter_module:flutter_debug:1.0")
-    "profileImplementation"("com.lenox.enjoy.flutter_module:flutter_profile:1.0")
-    releaseImplementation("com.lenox.enjoy.flutter_module:flutter_release:1.0")
+    // Compose
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.foundation)
+
+    // Compose Utils
+    implementation(libs.coil.compose)
+    implementation(libs.activity.compose)
+    implementation(libs.bundles.accompanist)
+
+    debugImplementation(libs.flutter.module.debug)
+    "profileImplementation"(libs.flutter.module.profile)
+    releaseImplementation(libs.flutter.module.release)
 
 
-    testImplementation(Dependencies.Test.junit)
-    androidTestImplementation(Dependencies.Test.Androidx.junitExt)
-    androidTestImplementation(Dependencies.Test.Androidx.espressoCore)
-    androidTestImplementation(Dependencies.Test.Androidx.Compose.uiTestJunit4)
-    androidTestImplementation(Dependencies.Test.Androidx.Compose.uiTooling)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    androidTestImplementation(libs.androidx.compose.ui.tooling)
 }
