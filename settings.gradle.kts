@@ -48,6 +48,7 @@ dependencyResolutionManagement {
             version("accompanist", "0.23.1")
             version("androidx-compose", "1.1.0")
             version("flutter-module", "1.0")
+            version("kotlinx-coroutines", "1.6.0-native-mt")
 
             plugin("android-app", "com.android.application").versionRef("plugin-android")
             plugin("android-lib", "com.android.library").versionRef("plugin-android")
@@ -68,9 +69,13 @@ dependencyResolutionManagement {
             library("coil-compose", "io.coil-kt", "coil-compose").version("2.0.0-alpha08")
             library("activity-compose", "androidx.activity", "activity-compose").version("1.4.0")
 
+            library("kotlinx-coroutines-core", "org.jetbrains.kotlinx", "kotlinx-coroutines-core").versionRef("kotlinx-coroutines")
+            library("kotlinx-coroutines-android", "org.jetbrains.kotlinx", "kotlinx-coroutines-android").versionRef("kotlinx-coroutines")
+
             library("androidx-core-ktx", "androidx.core", "core-ktx").version("1.7.0")
             library("androidx-core-splashscreen", "androidx.core", "core-splashscreen").version("1.0.0-beta01")
             library("androidx-lifecycle-runtime-ktx", "androidx.lifecycle", "lifecycle-runtime-ktx").version("2.4.1")
+            library("androidx-work-runtime-ktx", "androidx.work", "work-runtime-ktx").version("2.7.1")
 
             library("flutter-module-debug", "com.lenox.enjoy.flutter_module", "flutter_debug").versionRef("flutter-module")
             library("flutter-module-profile", "com.lenox.enjoy.flutter_module", "flutter_profile").versionRef("flutter-module")
